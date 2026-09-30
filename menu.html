@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>프레시 팜 - 산지직송 제철 과일 쇼핑몰</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /*  메인 배너 영역  */
+    .hero-banner {
+        width: 1200px;
+        height: 350px;
+        border-radius: 12px;
+        margin: 30px auto;
+        display: flex;
+        align-items: center;
+        padding: 0 50px;
+        background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url('image/apple_main.png') no-repeat center/cover;
+        position: relative;
+        overflow: hidden;
+    }
+    .banner-card {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(4px);
+        padding: 32px;
+        border-radius: 8px;
+        width: 390px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        z-index: 2;
+    }
+    .banner-badge {
+        display: inline-block;
+        background-color: #ECFDF5;
+        color: #047857;
+        font-size: 13px;
+        font-weight: bold;
+        padding: 4px 12px;
+        border-radius: 12px;
+        margin-bottom: 12px;
+    }
+    .banner-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: #111827;
+        margin-bottom: 8px;
+        line-height: 1.3;
+    }
+    .banner-sub {
+        font-size: 14px;
+        color: #4B5563;
+        margin-bottom: 22px;
+    }
+    /* 추천 섹션 타이틀 */
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin: 45px 0 22px;
+    }
+    .section-header h2 {
+        font-size: 24px;
+        font-weight: bold;
+        color: #111827;
+    }
+    .section-header p {
+        font-size: 14px;
+        color: #6B7280;
+        margin-top: 6px;
+    }
+    .view-all-link {
+        font-size: 14px;
+        color: #4B5563;
+        font-weight: bold;
+        transition: color 0.2s;
+    }
+    .view-all-link:hover {
+        color: #111827;
+        text-decoration: underline;
+    }
+    /* 4구 상품 카드 */
+    .product-grid {
+        display: flex;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 80px;
+    }
+    .product-card {
+        flex: 1;
+        border: 1px solid #E5E7EB;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .product-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        border-color: #D1D5DB;
+    }
+    /* 상품 썸네일 이미지 크기 및 찌그러짐 방지 */
+    .card-thumb {
+        width: 100%;
+        height: 230px;
+        object-fit: cover;
+        display: block;
+        background-color: #F3F4F6;
+    }
+    .card-info {
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+    }
+    .card-origin {
+        font-size: 12px;
+        font-weight: bold;
+        color: #047857;
+        margin-bottom: 6px;
+    }
+    .card-name {
+        font-size: 16px;
+        font-weight: bold;
+        color: #111827;
+        margin-bottom: 14px;
+        line-height: 1.35;
+    }
+    .card-price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin-top: auto;
+    }
+    .discount {
+        color: #EF4444;
+        font-size: 18px;
+        font-weight: bold;
+    }
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #111827;
+    }
+    .original-price {
+      font-size: 13px;
+      color: #9CA3AF;
+      text-decoration: line-through;
+    }
+  </style>
+</head>
+<body>
+  <!-- 1. 상단 GNB & 검색 헤더 -->
+<header class="site-header">
+    <div class="container header-top">
+        <a href="menu.html" class="logo">프레시 팜</a>
+        <div class="search-box">
+            <input type="text" placeholder="산지 직송 제철 과일을 검색해보세요 🔍">
+            <button type="button">🔍</button>
+        </div>
+        <div class="header-utils">
+            <a href="#">로그인</a>
+            <span>|</span>
+            <a href="#">회원가입</a>
+            <span>|</span>
+            <a href="#">장바구니 (0)</a>
+        </div>
+    </div>
+
+    <!-- 2단 가로 카테고리 바 -->
+    <nav class="gnb-bar">
+        <div class="container">
+            <ul class="gnb-list">
+                <li class="all-cat"><a href="#">≡ 전체 카테고리</a></li>
+                <li class="highlight"><a href="menu.html">이달의 제철</a></li>
+                <li><a href="#">사과·배</a></li>
+                <li><a href="#">감귤·만감류</a></li>
+                <li><a href="#">샤인머스캣·포도</a></li>
+                <li><a href="#">선물세트</a></li>
+                <li><a href="#">산지 이야기</a></li>
+                <li style="margin-left: auto;"><a href="#deliverables" style="color: #047857; font-weight: bold;">산출물 보기</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+  <div class="container">
+    <!-- 2. 메인 프로모션 배너 -->
+    <section class="hero-banner">
+        <div class="banner-card">
+            <span class="banner-badge">🌿 산지 당일 수확 직송전</span>
+            <h2 class="banner-title">청송 꿀사과 첫 수확 특가</h2>
+            <p class="banner-sub">평균 15Brix 이상 고당도 보장 배송</p>
+            <a href="desc.html" class="btn-primary" style="padding: 10px 20px; font-size: 14px;">특가 보러가기 →</a>
+        </div>
+    </section>
+
+    <!-- 3. 추천 제철 과일 섹션 타이틀 -->
+    <div class="section-header">
+        <div>
+            <h2>🍎 지금 가장 달콤한 제철 과일</h2>
+            <p>산지에서 오늘 아침 수확하여 바로 출발합니다.</p>
+        </div>
+        <a href="#" class="view-all-link">전체보기 &gt;</a>
+    </div>
+
+    <!-- 4. 추천 상품  -->
+    <section class="product-grid">
+      <!-- 상품 1: 사과 -->
+        <a href="desc.html" class="product-card">
+            <img src="image/apple.avif" alt="[경북 청송] 당도선별 꿀사과 3kg" class="card-thumb">
+            <div class="card-info">
+                <div class="card-origin">[경북 청송]</div>
+                <div class="card-name">당도선별 꿀사과 3kg</div>
+                <div class="card-price-row">
+                    <span class="discount">20%</span>
+                    <span class="price">24,900원</span>
+                    <span class="original-price">31,000원</span>
+                </div>
+            </div>
+        </a>
+
+      <!-- 상품 2: 배 -->
+      <a href="desc.html" class="product-card">
+        <img src="image/pear.png" alt="[전남 나주] GAP 인증 햇 신고배 5kg" class="card-thumb">
+        <div class="card-info">
+            <div class="card-origin">[전남 나주]</div>
+            <div class="card-name">GAP 인증 햇 신고배 5kg</div>
+            <div class="card-price-row">
+                <span class="discount">15%</span>
+                <span class="price">29,800원</span>
+                <span class="original-price">35,000원</span>
+            </div>
+        </div>
+      </a>
+
+      <!-- 상품 3: 감귤 -->
+      <a href="desc.html" class="product-card">
+        <img src="image/tangerine.avif" alt="[제주 서귀포] 노지 감귤 로얄과 3kg" class="card-thumb">
+        <div class="card-info">
+            <div class="card-origin">[제주 서귀포]</div>
+            <div class="card-name">노지 감귤 로얄과 3kg</div>
+            <div class="card-price-row">
+                <span class="discount">10%</span>
+                <span class="price">18,500원</span>
+                <span class="original-price">20,500원</span>
+            </div>
+        </div>
+      </a>
+
+      <!-- 상품 4: 샤인머스캣 -->
+        <a href="desc.html" class="product-card">
+            <img src="image/shine.png" alt="[경북 김천] 고당도 샤인머스캣 2kg" class="card-thumb">
+            <div class="card-info">
+                <div class="card-origin">[경북 김천]</div>
+                <div class="card-name">고당도 샤인머스캣 2kg</div>
+                <div class="card-price-row">
+                    <span class="discount">25%</span>
+                    <span class="price">26,900원</span>
+                    <span class="original-price">36,000원</span>
+                </div>
+            </div>
+        </a>
+    </section>
+    
+  </div>
+</body>
+</html>

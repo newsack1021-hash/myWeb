@@ -3,73 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style_3.css">
+    <title>프레시 팜 - 산지직송 제철과일</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-    
-    </style>
+    /* 인트로 전용 레이아웃 */
+        .intro-page {
+            padding: 30px 0 60px;
+        }
+        .intro-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 35px;
+        }
+        .intro-visual {
+        width: 1200px;
+        height: 410px;
+        border-radius: 8px;
+        margin-bottom: 40px;
+        }
+        .intro-content {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .intro-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #E2E8F0;
+            color: #1E293B;
+            padding: 8px 24px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .intro-title {
+            font-size: 34px;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 16px;
+        }
+        .intro-desc {
+            font-size: 16px;
+            color: #6B7280;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        .intro-cta {
+            width: 240px;
+            font-size: 16px;
+        }
+        .intro-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            display: block;
+        }
+  </style>
 </head>
 <body>
-    <div id="wrap">
-        <header id="topNav">
-            <div class="util-menu"> 로그인 | 인증센터 | Global</div>
-        </header>
+  
+    <div class="container intro-page">
+    <!-- 상단 간이 헤더 -->
+    <header class="intro-nav">
+        <div class="logo">프레시 팜</div>
+        <a href="menu.html" style="color: #6B7280; font-size: 15px;">둘러보기 &gt;</a>
+    </header>
 
-    <div id="siteNav">
-        <div class="logo" style="font-weight: bold;">
-        <span style="color: red;">BNK</span> 부산은행
+    <!-- 과일 대표 이미지 영역 -->
+    <div class="intro-visual">
+        <img src="image/mainfruit.avif" alt="신선한 제철 과일 모음">
     </div>
-        <div class="tabs"> 개인 | 기업 | 금융상품</div>
-    </div>
 
-    <nav id="gnbNav">
-        <div class="item">조회</div>
-	    <div class="item">이체</div>
-	    <div class="item">예금/신탁</div>
-        <div class="item">퇴직연금</div>
-        <div class="item">ISA</div>
-        <div class="item">대출</div>
-        <div class="item">웰스타로보B</div>
-        <div class="item">펀드</div>
-        <div class="item">카드</div>
-        <div class="item">외환</div>
-        <div class="item">보험</div>
-        <div class="item">공과금납부</div>
-        <div class="item">전자어음</div>
-        <div class="item">뱅킹관리</div>
-    </nav>
-	    
-    <main id="pebContainer">
-        <section class="main-banner">배너영역</section>
-
-        <section class="card-grid">
-           <div class="card">
-            <strong class="title">추천상품</strong>
-            <span class="desc">BNK 추천상품</span>
-        </div>
-        <div class="card">
-            <strong class="title">모임관리</strong>
-            <span class="desc">모임관리를 효율적으로</span>
-        </div>
-        <div class="card">
-            <strong class="title">목돈마련</strong>
-            <span class="desc">목돈마련</span>
-        </div>
-        <div class="card">
-            <strong class="title">환전&금고</strong>
-            <span class="desc">알뜰하게 환전하기</span>
-        </div>
-        <div class="card">
-            <strong class="title">주택담보대출(당행 상품)</strong>
-            <span class="desc">집안에서 간편하게</span>
-        </div>
-    </section>
-        
-    <section class="board-section">새소식 / 이벤트</section>
+    <!-- 인트로 소개 텍스트 및 CTA 버튼 -->
+    <main class="intro-content">
+        <div class="intro-badge">🌿 산지직송 제철과일</div>
+        <h1 class="intro-title">새벽에 수확한 신선함, 식탁으로 바로 갑니다.</h1>
+        <p class="intro-desc">
+        중간 유통 거품 없이 전국 우수 농가의 고당도 과일을<br>
+        가장 신선한 상태로 만나보세요.</p>
+        <a href="menu.html" class="btn-primary intro-cta">제철 과일 둘러보기</a>
     </main>
-    
-    <footer id="footer">하단 정보</footer>                             
-    
-    </div>
+  </div>
 </body>
 </html>
