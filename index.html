@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>실습 프로젝트 모음</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>웹 실습 프로젝트 목록</title>
   <style>
     body {
-      font-family: sans-serif;
-      padding: 30px;
-      line-height: 1.6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 40px 20px;
+      background-color: #f8f9fa;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     h1 {
       margin-bottom: 24px;
+      color: #2d3436;
     }
-    .project-section {
-      margin-bottom: 20px;
+    ul {
+      list-style: none;
+      padding: 0;
+      width: 100%;
+      max-width: 480px;
     }
-    ul, li {
-      list-style-type: square;
-      padding-left: 20px;
-      font-size: 22px;       
+    li {
       margin-bottom: 14px;
     }
     a {
+      display: block;
+      padding: 16px 20px;
+      background: #ffffff;
+      border: 1px solid #dfe6e9;
+      border-radius: 12px;
       text-decoration: none;
-      color: #0366d6;
-      font-weight: 500;
+      color: #0984e3;
+      font-size: 1.15rem;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+      transition: all 0.2s;
     }
     a:hover {
-      text-decoration: underline;
+      background: #0984e3;
+      color: #ffffff;
+      transform: translateY(-2px);
     }
   </style>
 </head>
 <body>
 
   <h1>웹 실습 프로젝트 목록</h1>
-    <ul>
-        <li>
-            <a href="./message/message_intro.html">1. Message 프로젝트 바로가기</a>
-        </li>
-        <li>
-            <a href="./storybook/storybook_intro.html">2. Storybook 프로젝트 바로가기</a>
-        </li>
-    </ul>
+  <ul>
+    <li>
+      <a href="./message/message_intro.html">1. Message 프로젝트 바로가기</a>
+    </li>
+    <li>
+      <a href="./storybook_intro.html">2. Storybook 프로젝트 바로가기</a>
+    </li>
+  </ul>
 
 </body>
 </html>
