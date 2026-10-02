@@ -1,0 +1,366 @@
+@charset "utf-8";
+
+/* =========================================
+   1. 공통 기본 초기화 & 폰트 선명화 엔진
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* =========================================
+   2. 인트로 페이지 (intro.html) 스타일
+========================================= */
+body.intro-body {
+    position: relative;
+    font-family: "Gowun Dodum", sans-serif;
+    color: #f1f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+    background-color: #070a12;
+    overflow: hidden;
+}
+
+body.intro-body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(7, 10, 18, 0.78) 0%, rgba(7, 10, 18, 0.35) 70%, rgba(7, 10, 18, 0.7) 100%),
+        url('https://images.unsplash.com/photo-1538370965046-79c0d6907d47?auto=format&fit=crop&w=1920&q=90');
+    background-size: cover;
+    background-position: center;
+    filter: contrast(125%) brightness(100%) saturate(115%);
+    animation: 
+        kenBurns 22s ease-in-out infinite alternate,
+        starTwinkle 4s ease-in-out infinite alternate;
+    z-index: 0;
+}
+
+.intro-box {
+    position: relative;
+    z-index: 1;
+    max-width: 680px;
+    background: rgba(13, 18, 30, 0.45); 
+    padding: 60px 40px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);         
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+}
+
+@keyframes kenBurns {
+    0% { transform: scale(1.0); }
+    100% { transform: scale(1.12); }
+}
+
+@keyframes starTwinkle {
+    0% {
+        opacity: 0.88;
+        filter: contrast(120%) brightness(95%);
+    }
+    50% {
+        opacity: 1.0;
+        filter: contrast(135%) brightness(115%);
+    }
+    100% {
+        opacity: 0.88;
+        filter: contrast(120%) brightness(95%);
+    }
+}
+
+.intro-box h1 {
+    font-size: 2.2em;
+    line-height: 1.4;
+    margin-bottom: 24px;
+    font-weight: 500;
+    color: #ffffff;
+    word-break: keep-all;
+}
+
+.intro-box p {
+    font-size: 1.1em;
+    color: #cbd5e1;
+    line-height: 1.8;
+    margin-bottom: 45px;
+    word-break: keep-all;
+}
+
+.btn-start {
+    display: inline-block;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 16px 40px;
+    font-size: 1.15em;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.btn-start:hover {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.6);
+}
+
+/* =========================================
+   3. 메인 페이지 (main.html) 스타일
+========================================= */
+body.main-body {
+    min-height: 100vh;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Gowun Dodum', sans-serif;
+    color: #f1f5f9;
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(7, 10, 18, 0.75) 0%, rgba(7, 10, 18, 0.92) 100%),
+        url('https://images.unsplash.com/photo-1538370965046-79c0d6907d47?auto=format&fit=crop&w=1920&q=90') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* 중앙 컨테이너 (텍스트가 맑고 또렷하게 보이도록 불투명도와 패딩 안정화) */
+.container {
+    max-width: 800px;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.85); 
+    backdrop-filter: blur(12px);         
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+}
+
+.header-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* 상단 메인 타이틀: 번짐 그림자 제거 후 순백색(#fff) + 폰트 두께로 또렷함 확보 */
+.header-title h2 {
+    font-size: 1.85em;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+}
+
+/* 상단 부제목 문구: 깨끗한 밝은 그레이 */
+.header-title p {
+    font-size: 1.08em;  
+    color: #cbd5e1;   
+    line-height: 1.5;  
+    font-weight: 400;
+}
+
+/* 1, 2, 3번 소제목: 그림자 제거로 외곽선을 깔끔하게 떨어뜨림 */
+.section-label {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.25em;
+    margin-bottom: 14px;
+    display: block;
+    letter-spacing: -0.2px;
+}
+
+/* --- 1. 폰트 선택 박스 (화이트 베이스) --- */
+.d1 {
+    background-color: #f8fafc;
+    padding: 18px 24px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+    flex-wrap: wrap;     
+    row-gap: 10px;
+}
+
+.font-opt {
+    display: flex;         
+    align-items: center;   
+    gap: 8px;               
+    white-space: nowrap;   
+}
+
+.d1 input[type="radio"] {
+    accent-color: #2563eb; 
+    cursor: pointer;
+    width: 17px;          
+    height: 17px;
+}
+
+.d1 label {
+    font-size: 1.1em;
+    color: #0f172a !important; /* 👈 진하고 또렷한 먹색 */
+    cursor: pointer;
+    transition: color 0.2s ease;
+    white-space: nowrap;
+}
+
+.d1 label:hover {
+    color: #2563eb !important; 
+}
+
+/* Gowun Dodum 선택 시 */
+#GowunDodum:checked + label {
+    font-family: "Gowun Dodum", sans-serif;
+    font-weight: 700;
+    color: #0f172a !important;
+}
+.d1:has(#GowunDodum:checked) ~ .d2 #msg {
+    font-family: "Gowun Dodum", sans-serif;
+    font-size: 1.35em;
+}
+
+/* Nanum Pen 선택 시 */
+#NanumPen:checked + label {
+    font-family: "Nanum Pen Script", cursive;
+    font-weight: 700;
+    color: #0f172a !important;
+    font-size: 1.55em;
+}
+.d1:has(#NanumPen:checked) ~ .d2 #msg {
+    font-family: "Nanum Pen Script", cursive;
+    font-size: 1.85em;
+}
+
+/* --- 2. 카드 배경 선택 영역 --- */
+.card-select-area {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.card-opt {
+    flex: 1;
+    min-width: 140px;
+}
+
+.card-opt input[type="radio"] {
+    display: none;
+}
+
+.card-opt label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.card-opt label img {
+    width: 100%;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.card-opt label span {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+.card-opt label:hover {
+    border-color: #94a3b8;
+    transform: translateY(-2px);
+}
+
+.card-opt input[type="radio"]:checked + label {
+    border-color: #3b82f6;
+    background-color: rgba(59, 130, 246, 0.22);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.35);
+}
+
+.card-opt input[type="radio"]:checked + label span {
+    color: #93c5fd;
+}
+
+/* --- 3. 메시지 입력창 (선명한 1px 외곽선 + 불필요한 번짐 제거) --- */
+.d2 textarea {
+    width: 100%;
+    min-height: 220px;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 8px;
+    padding: 20px;
+    outline: none;
+    resize: vertical;
+    line-height: 1.7;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    color: #ffffff !important;
+    font-weight: 600;
+    /* 번지는 블러 대신, 1px 초정밀 컷 외곽선으로 선명도 극대화 */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+    transition: border-color 0.2s, background 0.3s ease;
+}
+
+.d2 textarea:focus {
+    border-color: #60a5fa;
+}
+
+/* 플레이스홀더 안내 문구: 번짐(10px)을 지우고 맑고 또렷한 화이트로 교체 */
+.d2 textarea::placeholder {
+    color: #ffffff !important;
+    opacity: 0.95 !important;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
+}
+
+/* 카드 선택에 따른 텍스트창 실시간 배경 적용 (사진 명암을 살짝 눌러 글씨를 더 또렷하게 만듦) */
+.card-select-area:has(#card1:checked) ~ .d2 #msg {
+    background: linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)), 
+                url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=1200&q=85');
+}
+
+.card-select-area:has(#card2:checked) ~ .d2 #msg {
+    background: linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)), 
+                url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1200&q=85');
+}
+
+.card-select-area:has(#card3:checked) ~ .d2 #msg {
+    background: linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)), 
+                url('https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=85');
+}
+
+/* --- 하단 저장 및 봉인 버튼 --- */
+.btn-submit {
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    background-color: #3b82f6; /* 👈 눈에 더 확 들어오는 깔끔한 블루 포인트 */
+    color: #ffffff !important;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;                  
+    font-size: 1.1em;                    
+    font-weight: 700;                      
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s ease;
+}
+
+.btn-submit:hover {
+    background-color: #2563eb;
+    transform: translateY(-1px);
+}

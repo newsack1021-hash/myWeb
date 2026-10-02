@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마지막 편지 작성하기</title>
+    <!-- 구글 웹 폰트 연결 (고운돋움, 나눔펜) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <!-- 분리된 외부 CSS 파일 연결 -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="main-body">
+
+    <div class="container">
+        <!-- 헤더 영역 -->
+        <div class="header-title">
+            <h2>소중한 사람에게 남기는 마지막 메시지</h2>
+            <p>전하고 싶은 진심의 어조에 어울리는 폰트와 카드 배경을 선택해 보세요.</p>
+        </div>
+
+        <!-- 1. 폰트 선택 라디오 -->
+        <span class="section-label">1. 폰트 선택하기</span>
+        <div class="d1">
+            <!-- 고운돋움 (기본 선택) -->
+            <div class="font-opt">
+                <input type="radio" name="font" id="GowunDodum" checked>
+                <label for="GowunDodum">Gowun Dodum (단정한 정자체)</label>
+            </div>
+            <!-- 나눔펜 -->
+            <div class="font-opt">
+                <input type="radio" name="font" id="NanumPen">
+                <label for="NanumPen">Nanum Pen (따뜻한 손글씨)</label>
+            </div>
+        </div>
+
+        <!-- 2. 카드 배경 선택 (3종 라디오 카드) -->
+        <span class="section-label">2. 메시지 카드 배경 선택하기</span>
+        <div class="card-select-area">
+            <!-- 카드 1: 황혼의 바다 (기본 선택) -->
+            <div class="card-opt">
+                <input type="radio" name="cardTheme" id="card1" checked>
+                <label for="card1">
+                    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=400&q=80" alt="황혼 바다">
+                    <span>1. 황혼의 바다</span>
+                </label>
+            </div>
+
+            <!-- 카드 2: 밤하늘 별빛 -->
+            <div class="card-opt">
+                <input type="radio" name="cardTheme" id="card2">
+                <label for="card2">
+                    <img src="https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=400&q=80" alt="밤하늘 별빛">
+                    <span>2. 밤하늘 별빛</span>
+                </label>
+            </div>
+
+            <!-- 카드 3: 새벽 숲 -->
+            <div class="card-opt">
+                <input type="radio" name="cardTheme" id="card3">
+                <label for="card3">
+                    <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=400&q=80" alt="새벽 숲">
+                    <span>3. 새벽 숲</span>
+                </label>
+            </div>
+        </div>
+
+        <!-- 3. 메시지 입력창 -->
+        <span class="section-label" style="margin-top: 30px;">3. 진심을 담은 메시지 작성</span>
+        <div class="d2">
+            <textarea rows="6" cols="80" id="msg" placeholder="절체절명의 순간, 가장 아끼는 이에게 남길 한마디를 적어보세요."></textarea>
+        </div>
+
+        <button type="button" class="btn-submit" onclick="alert('소중한 메시지가 마음에 온전히 보관되었습니다.');">메시지 저장 및 봉인하기</button>
+    </div>
+
+</body>
+</html>
