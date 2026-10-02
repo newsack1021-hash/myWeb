@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>인어 공주 - 동화책 읽기</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <input type="radio" name="font-size" id="font-normal" checked>
+  <input type="radio" name="font-size" id="font-large">
+
+  <input type="radio" name="slide" id="slide1" checked>
+  <input type="radio" name="slide" id="slide2">
+  <input type="radio" name="slide" id="slide3">
+  <input type="radio" name="slide" id="slide4">
+  <input type="radio" name="slide" id="slide5">
+  <input type="radio" name="slide" id="slide6">
+  <input type="radio" name="slide" id="slide7">
+  <input type="radio" name="slide" id="slide8">
+  <input type="radio" name="slide" id="slide9">
+
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <a href="storybook_intro.html" class="home-btn">🏠 표지로</a>
+      <div class="book-title-header">인어 공주</div>
+    </div>
+    <div class="font-controls">
+      <span class="font-label">글자 크기:</span>
+      <label for="font-normal" class="font-btn btn-font-normal">보통</label>
+      <label for="font-large" class="font-btn btn-font-large">크게</label>
+    </div>
+  </header>
+
+  <main class="viewer-container" id="bookViewer">
+    <div class="slider-track" id="sliderTrack">
+
+      <!-- 제1장 (jpg가 안 뜰 경우 png로 자동 재시도) -->
+      <section class="slide-page">
+        <span class="nav-arrow prev disabled">◀</span>
+        <label for="slide2" class="nav-arrow next">▶</label>
+        <div class="illustration-box">
+          <img src="images/image1.jpg" onerror="this.onerror=null; this.src='images/image1.png';" alt="제1장. 깊고 푸른 바닷속 왕국" />
+        </div>
+        <div class="story-content">
+          <h2 class="page-chapter-title">제1장. 깊고 푸른 바닷속 왕국</h2>
+          <div class="story-text">
+            <p>저 멀리 드넓은 바다에, 바닷물은 사랑스러운 수레국화 꽃잎만큼이나 파랗고 깨끗한 유리만큼이나 투명합니다. 하지만 매우 깊기도 합니다. 닻 밧줄이 닿는 곳보다 더 깊이 내려가서 바다 밑바닥부터 수많은 첨탑이 위로 높이 쌓일 정도입니다. 바로 그곳 아래에 인어들이 살고 있었습니다.</p>
+            <p>드넓은 바다 가장 깊은 곳에는 바다 왕의 궁전이 솟아 있었습니다. 성벽은 산호로 지었으며 뾰족한 창문은 호박 보석으로 만들었고, 지붕은 파도에 맞춰 열리고 닫히는 홍합 껍데기로 되어 있었습니다. 바다 왕에게는 사랑스러운 여섯 명의 공주가 있었는데, 그중에서 막내가 가장 아름다웠습니다. 피부는 장미 꽃잎처럼 곱고 눈동자는 깊은 바다처럼 파란빛이었지만, 발 대신 몸 끝에 물고기의 꼬리가 달려 있었습니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 제2장 -->
+      <section class="slide-page">
+        <label for="slide1" class="nav-arrow prev">◀</label>
+        <label for="slide3" class="nav-arrow next">▶</label>
+        <div class="illustration-box">
+          <img src="images/image2.png" alt="제2장. 작은 정원과 대리석 소년" />
+        </div>
+        <div class="story-content">
+          <h2 class="page-chapter-title">제2장. 작은 정원과 대리석 소년</h2>
+          <div class="story-text">
+            <p>공주들은 각자만의 작은 꽃밭이 있었습니다. 막내는 태양처럼 둥글게 꽃밭을 만들어 태양만큼이나 붉은 꽃만 심었습니다. 막내는 보통의 아이와 다르게 차분하고 언제나 생각에 잠겨 있었습니다. 언니들이 난파선에서 건져 올린 온갖 물건들로 꽃밭을 꾸밀 때, 막내는 붉은 꽃과 함께 가라앉은 배에서 찾은 하얀 대리석 소년 동상만을 소중히 놓아두었습니다.</p>
+            <p>막내 공주는 위쪽 인간 세상의 이야기를 듣는 것을 가장 좋아했습니다. 할머니에게 배와 도시, 사람과 동물에 대한 이야기를 졸라 들었습니다. 향기로운 지상의 꽃과 초록빛 숲, 그리고 노래를 부르는 ‘물고기’(작은 새)들의 이야기를 들으며 위쪽 세상을 끝없이 동경했습니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 제3장 -->
+      <section class="slide-page">
+        <label for="slide2" class="nav-arrow prev">◀</label>
+        <label for="slide4" class="nav-arrow next">▶</label>
+        <div class="illustration-box">
+          <img src="images/image3.png" alt="제3장. 언니들이 들려준 세상" />
+        </div>
+        <div class="story-content">
+          <h2 class="page-chapter-title">제3장. 언니들이 들려준 세상</h2>
+          <div class="story-text">
+            <p>“너희 중 열다섯 살이 되는 사람은 바다 위로 나가 바위에 앉아 달빛을 보아도 좋단다.” 할머니의 말대로 맏이부터 한 해에 한 명씩 물 밖 세상을 구경할 수 있었습니다. 맏이는 수백 개의 불빛이 별처럼 빛나는 도시와 울려 퍼지는 교회의 종소리를 들려주었고, 둘째는 하늘 전체가 황금빛과 붉은 장밋빛으로 물드는 눈부신 일몰을 이야기했습니다.</p>
+            <p>셋째는 숲속 동물들과 헤엄치는 아이들을 보았고, 넷째는 드넓은 바다의 고래와 돌고래들을, 다섯째는 거대한 빙산 위에 앉아 번개를 바라보았던 기억을 들려주었습니다. 언니들의 이야기를 들을 때마다 막내 공주의 마음속 동경은 더욱더 깊어만 갔습니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 제4장 -->
+      <section class="slide-page">
+        <label for="slide3" class="nav-arrow prev">◀</label>
+        <label for="slide5" class="nav-arrow next">▶</label>
+        <div class="illustration-box">
+          <img src="images/image4.png" alt="제4장. 폭풍우 속의 만남" />
+        </div>
+        <div class="story-content">
+          <h2 class="page-chapter-title">제4장. 폭풍우 속의 만남</h2>
+          <div class="story-text">
+            <p>마침내 막내 공주도 열다섯 살이 되어 물 밖으로 솟아올랐습니다. 수면 위에는 세 개의 돛을 단 커다란 배가 떠 있었고, 그곳에서는 검은 눈동자를 지닌 잘생긴 젊은 왕자의 생일 축하 파티가 열리고 있었습니다. 눈부신 불꽃놀이 속에서 왕자를 바라보며 공주는 한시도 눈을 뗄 수 없었습니다.</p>
+            <p>그러나 곧 끔찍한 폭풍우가 들이닥쳐 배는 두 동강이 났고, 왕자는 바닷속 깊은 곳으로 가라앉았습니다. ‘인간은 물속에서 살 수 없어!’ 공주는 부서진 판자 사이를 뚫고 헤엄쳐 지친 왕자를 안아 올렸습니다. 밤새 파도를 가른 공주는 날이 밝자 왕자를 해변의 모래밭에 눕혀두고, 바위 뒤에 몸을 숨겨 왕자가 무사히 사람들에게 발견되는 모습을 지켜보았습니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 제5장 -->
+      <section class="slide-page">
+        <label for="slide4" class="nav-arrow prev">◀</label>
+        <label for="slide6" class="nav-arrow next">▶</label>
+        <div class="illustration-box">
+          <img src="images/image5.png" alt="제5장. 바다 마녀와의 위험한 거래" />
+        </div>
+        <div class="story-content">
+          <h2 class="page-chapter-title">제5장. 바다 마녀와의 위험한 거래</h2>
+          <div class="story-text">
+            <p>왕자를 잊을 수 없고 영원히 사는 불멸의 영혼을 간절히 바란 공주는 두려움을 무릅쓰고 바다 마녀를 찾아갔습니다. 마녀는 섬뜩하게 웃으며 말했습니다. “네 꼬리를 두 다리로 바꿔주는 마법의 약을 주마. 하지만 걸을 때마다 날카로운 칼날 위를 걷는 듯한 고통이 따를 것이다. 그리고 왕자가 다른 사람과 결혼한다면, 다음 날 아침 너는 바다의 물거품이 되어 사라질 것이다.”</p>
+            <p>“감수하겠어요.” 공주의 대답에 마녀는 약의 대가로 바닷속에서 가장 아름다운 공주의 목소리를 요구했습니다. 마녀는 공주의 혀를 잘랐고, 공주는 더 이상 말을 하거나 노래를 부를 수 없게 되었습니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 제6장 -->
+      <section class="slide-page">
+        <label for="slide5" class="nav-arrow prev">◀</label>
+        <label for="slide7" class="nav-arrow next">▶</label>
+        <div class="illustration-box">
+          <img src="images/image6.png" alt="제6장. 말을 잃은 궁전의 여인" />
+        </div>
+        <div class="story-content">
+          <h2 class="page-chapter-title">제6장. 말을 잃은 궁전의 여인</h2>
+          <div class="story-text">
+            <p>왕자의 궁전 계단에서 쓰디쓴 약을 마신 공주는 가슴을 베는 듯한 고통 속에 쓰러졌고, 깨어났을 때는 물고기 꼬리 대신 아름다운 하얀 다리를 지니고 있었습니다. 왕자는 말을 하지 못하는 공주를 가엾게 여기며 곁에 두었습니다.</p>
+            <p>공주는 발이 닿을 때마다 면도날 위를 걷는 듯 피가 배어 나오는 고통을 참으며, 오직 왕자를 위해 그 누구보다 우아하고 아름답게 춤을 추었습니다. 왕자는 공주를 아꼈지만, 자신을 구해준 해변의 소녀만을 평생의 연인으로 마음에 품고 있었습니다. 그 소녀가 바로 눈앞의 인어 공주라는 사실을 꿈에도 모른 채 말입니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 제7장 -->
+      <section class="slide-page">
+        <label for="slide6" class="nav-arrow prev">◀</label>
+        <label for="slide8" class="nav-arrow next">▶</label>
+        <div class="illustration-box">
+          <img src="images/image7.png" alt="제7장. 눈물의 결혼식" />
+        </div>
+        <div class="story-content">
+          <h2 class="page-chapter-title">제7장. 눈물의 결혼식</h2>
+          <div class="story-text">
+            <p>이윽고 왕자는 이웃 왕국의 공주와 혼담을 치르러 떠났습니다. 마침내 나타난 신부를 본 왕자는 외쳤습니다. “당신이었군요! 바닷가에서 죽어가던 나를 구해준 사람이 바로 당신이었어!” 신부는 바로 과거 공주가 왕자를 눕혀두었던 해변의 건물에 머물던 소녀였습니다.</p>
+            <p>성대한 축복 속에 두 사람의 결혼식이 열렸고, 배 위에서는 화려한 밤 축제가 이어졌습니다. 황금 옷을 입고 신부의 긴 드레스를 들고 있던 인어 공주의 가슴은 산산이 부서져 내렸습니다. 해가 뜨면 물거품이 되어 사라질 마지막 밤이었지만, 공주는 왕자를 축복하며 마지막 힘을 다해 아름답게 춤을 추었습니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 제8장 -->
+      <section class="slide-page">
+        <label for="slide7" class="nav-arrow prev">◀</label>
+        <label for="slide9" class="nav-arrow next">▶</label>
+        <div class="illustration-box">
+          <img src="images/image8.png" alt="제8장. 언니들의 희생과 공주의 선택" />
+        </div>
+        <div class="story-content">
+          <h2 class="page-chapter-title">제8장. 언니들의 희생과 공주의 선택</h2>
+          <div class="story-text">
+            <p>배 위로 모두가 잠든 고요한 새벽, 바다 위로 머리카락이 잘려 나간 언니들이 솟아올랐습니다. “막내야! 마녀에게 우리 머리카락을 바치고 이 날카로운 단검을 받아왔어. 해가 뜨기 전에 왕자의 심장을 찔러 그의 피를 네 발에 적셔야 해! 그러면 꼬리가 돌아와 다시 삼백 년을 우리와 살 수 있어. 서둘러!”</p>
+            <p>공주는 천막 안으로 들어가 깊이 잠든 왕자를 바라보았습니다. 왕자는 꿈속에서도 신부의 이름을 부르고 있었습니다. 떨리는 손으로 칼을 쥐고 있던 인어 공주는 결코 왕자를 해칠 수 없었습니다. 공주는 칼을 먼바다로 던져 버리고, 스스로 파도 속으로 몸을 던졌습니다. 공주의 몸은 차가운 거품으로 부드럽게 녹아들기 시작했습니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 제9장 -->
+      <section class="slide-page">
+        <label for="slide8" class="nav-arrow prev">◀</label>
+        <span class="nav-arrow next disabled">▶</span>
+        <div class="illustration-box">
+          <img src="images/image9.png" alt="제9장. 공기의 딸들과 찬란한 영혼" />
+        </div>
+        <div class="story-content">
+          <h2 class="page-chapter-title">제9장. 공기의 딸들과 찬란한 영혼</h2>
+          <div class="story-text">
+            <p>아침 햇살이 부드럽게 떠오르자, 공주는 차가운 죽음 대신 눈부신 빛 속에서 가볍게 떠오르는 자신을 발견했습니다. 공중에는 음악처럼 감미로운 목소리를 지닌 투명한 생명체들이 둥둥 떠다니고 있었습니다.</p>
+            <p>“우리는 공기의 딸들이란다. 너는 깊은 고통 속에서도 다른 이를 사랑하고 희생했기에 우리 곁으로 올라왔단다. 이제 세상 곳곳에 선한 향기를 전하며 착한 행동을 쌓는다면, 너는 마침내 그토록 바라던 영원한 영혼을 얻어 신의 나라에 닿게 될 거야.” 인어 공주는 처음으로 눈에 눈물을 머금은 채, 장밋빛 아침 구름 속으로 높이높이 날아올랐습니다.</p>
+          </div>
+          <div style="text-align: center; margin-top: 18px;">
+            <a href="storybook_intro.html" class="home-btn" style="background: #00838f; color: #ffffff; padding: 10px 24px; font-size: 1.1rem; border: none;">처음 표지로 🏠</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <div class="indicator-container">
+      <div class="dot-wrapper">
+        <label for="slide1" class="dot dot1"></label>
+        <label for="slide2" class="dot dot2"></label>
+        <label for="slide3" class="dot dot3"></label>
+        <label for="slide4" class="dot dot4"></label>
+        <label for="slide5" class="dot dot5"></label>
+        <label for="slide6" class="dot dot6"></label>
+        <label for="slide7" class="dot dot7"></label>
+        <label for="slide8" class="dot dot8"></label>
+        <label for="slide9" class="dot dot9"></label>
+      </div>
+      <span class="page-badge"></span>
+    </div>
+  </main>
+
+</body>
+</html>
