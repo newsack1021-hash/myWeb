@@ -1,65 +1,104 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>웹 실습 프로젝트 목록</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      padding: 40px 20px;
-      background-color: #f8f9fa;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    h1 {
-      margin-bottom: 24px;
-      color: #2d3436;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-      width: 100%;
-      max-width: 480px;
-    }
-    li {
-      margin-bottom: 14px;
-    }
-    a {
-      display: block;
-      padding: 16px 20px;
-      background: #ffffff;
-      border: 1px solid #dfe6e9;
-      border-radius: 12px;
-      text-decoration: none;
-      color: #0984e3;
-      font-size: 1.15rem;
-      font-weight: 600;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.04);
-      transition: all 0.2s;
-    }
-    a:hover {
-      background: #0984e3;
-      color: #ffffff;
-      transform: translateY(-2px);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>직장인 3대 절세·연금 계좌 가이드</title>
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>웹 실습 프로젝트 목록</h1>
-  <ul>
-    <li>
-      <a href="./message/message_intro.html">1. Message 프로젝트 바로가기</a>
-    </li>
-    <li>
-      <a href="./storybook/storybook_intro.html">2. Storybook 프로젝트 바로가기</a>
-    </li>
-    <li>
-      <a href="./studybook/main.html">3. studybook 프로젝트 바로가기</a>
-    </li>
-  </ul>
+    <div class="header">
+        <h1>13월의 월급을 만드는 절세 계좌 3총사</h1>
+        <p>각 항목을 클릭하면 세제 혜택과 운용 꿀팁이 아래에 표시됩니다.</p>
+    </div>
+    <hr>
+
+    <div class="menu-nav">
+        <button type="button" class="menu-btn" id="btn-1">1. ISA 계좌</button>
+        <button type="button" class="menu-btn" id="btn-2">2. 연금저축(연금저축펀드)</button>
+        <button type="button" class="menu-btn" id="btn-3">3. IRP 계좌</button>
+    </div>
+    <hr>
+    
+    <div id="content-area">
+        <p class="placeholder-text">조회할 금융 계좌를 상단에서 선택해 주세요.</p>
+    </div>
+
+    <script>
+       
+        const contentArea = document.getElementById("content-area");
+        const btn1 = document.getElementById("btn-1");
+        const btn2 = document.getElementById("btn-2");
+        const btn3 = document.getElementById("btn-3");
+        const menuButtons = document.querySelectorAll(".menu-btn");
+
+        function loadAccountData(targetId) {
+        
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.open("GET", "data.json");
+
+            xhttp.onload = function() {
+                
+                const dataList = JSON.parse(this.responseText);
+                const item = dataList.find(data => data.id === targetId);
+
+                if (item) {
+                    contentArea.innerHTML = `
+                        <div class="content-header">
+                            <h2>${item.name}</h2>
+                            <span class="badge">${item.badge}</span>
+                        </div>
+                        <p class="summary-text">${item.summary}</p>
+                        <hr class="inner-hr">
+
+                        <div class="info-group">
+                            <div class="info-row">
+                                <span class="info-label">👤 가입 자격</span>
+                                <span class="info-val">${item.eligibility}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">💰 납입 한도</span>
+                                <span class="info-val">${item.limit}</span>
+                            </div>
+                            <div class="info-row highlight-box">
+                                <span class="info-label">🎁 세제 혜택</span>
+                                <span class="info-val">${item.taxBenefit}</span>
+                            </div>
+                            <div class="info-row">
+                                <span class="info-label">📈 투자 자산</span>
+                                <span class="info-val">${item.portfolio}</span>
+                            </div>
+                            <div class="info-row tip-box">
+                                <span class="info-label">💡 운용 꿀팁</span>
+                                <span class="info-val">${item.ruleTip}</span>
+                            </div>
+                        </div>
+                    `;
+                } 
+        };
+
+        xhttp.send();
+
+        // 현재 클릭된 버튼 활성화(active 클래스) 시각 효과 처리
+        menuButtons.forEach(btn => btn.classList.remove("active"));
+        document.getElementById(`btn-${targetId}`).classList.add("active");
+    }
+
+    btn1.addEventListener("click", function() {
+        loadAccountData(1); 
+    });
+    btn2.addEventListener("click", function() {
+        loadAccountData(2); 
+    });
+    btn3.addEventListener("click", function() {
+        loadAccountData(3); 
+    });
+        
+
+   </script>
 
 </body>
 </html>
